@@ -5,9 +5,14 @@
 
 # --- PyTorch ecosystem (CUDA 11.8 wheels) ---
 # Install with:
-#   pip install torch==2.0.1+cu118 torchvision==0.15.2+cu118 --extra-index-url https://download.pytorch.org/whl/cu118
-torch==2.0.1+cu118
-torchvision==0.15.2+cu118
+#   pip install torch==2.6.0+cu118 torchvision==0.21.0+cu118 --extra-index-url https://download.pytorch.org/whl/cu118
+#
+# Minimum torch 2.6.0 is required to address:
+#   - CVE heap-buffer-overflow (patched in 2.2.0)
+#   - CVE use-after-free       (patched in 2.2.0)
+#   - CVE torch.load RCE       (patched in 2.6.0)
+torch==2.6.0+cu118
+torchvision==0.21.0+cu118
 
 # --- Core scientific stack ---
 numpy>=1.21.0,<2.0.0
