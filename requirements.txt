@@ -1,0 +1,27 @@
+# ============================================================
+# InSeg — Environment Requirements
+# Python 3.9  |  CUDA 11.8  |  NVIDIA A5000
+# ============================================================
+
+# --- PyTorch ecosystem (CUDA 11.8 wheels) ---
+# Install with:
+#   pip install torch==2.0.1+cu118 torchvision==0.15.2+cu118 --extra-index-url https://download.pytorch.org/whl/cu118
+torch==2.0.1+cu118
+torchvision==0.15.2+cu118
+
+# --- Core scientific stack ---
+numpy>=1.21.0,<2.0.0
+Pillow>=9.0.0
+scipy>=1.9.0
+
+# --- Progress / logging ---
+tqdm>=4.64.0
+tensorboard>=2.12.0
+
+# --- COCO format support ---
+pycocotools>=2.0.6
+
+# --- Inplace Activated Batch Normalization ---
+# Required by the model backbone (inplace_abn).
+# Install separately from source AFTER the packages above:
+#   pip install git+https://github.com/mapillary/inplace_abn.git
